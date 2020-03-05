@@ -1,5 +1,6 @@
 .filterName{
     font-size: 3em;
+    margin-left: 1em;
 }
 .categoryContainer{
     display: flex;
@@ -11,8 +12,8 @@
 
 .filterItems{
     display: flex;
- 
-    margin: 3em;
+
+    margin: 1em,1em,1em, 3em;
     flex-wrap: wrap;
 }
 

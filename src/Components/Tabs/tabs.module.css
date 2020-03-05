@@ -1,8 +1,9 @@
 .filterBar{
     display: flex;
-    margin: 3em;
+    margin: 1em 1em 1em 5em;
     text-align: center;
-    padding: 2em;
+    padding: 1em;
+   align-items: center;
 }
 
 .filterTabs{
@@ -15,9 +16,8 @@
     padding-right: 1em;
     align-items: center;
     border-radius: 10px;
-    background-color: rgb(196,196,196);
     padding-left: 2em;
-    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+   
 }
 .tabItem{
     display: flex;
@@ -27,7 +27,7 @@
     /* border-radius: 10px; */
     /* margin: 2em; */
     background-color: rgb(196,196,196);
-   
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
 }
 
 .Container{
@@ -43,5 +43,5 @@
     /* border-radius: 10px; */
     /* margin: 2em; */
     background-color: rgb(240, 240, 240);
-   
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
 }
