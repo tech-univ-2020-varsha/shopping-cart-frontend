@@ -5,9 +5,10 @@ import axios from 'axios';
 import * as styles from './summaryCard.module.css';
 import URL from '../../constants/url';
 
-const checkout = async (history) => {
+const checkout = async (history, setTotal) => {
   const response = await axios.get(`${URL}/checkout`);
   if (response.status === 200) {
+    setTotal(0);
     history.push('/');
   }
 };
@@ -16,7 +17,7 @@ const continueShopping = (history) => {
   history.push('/');
 };
 
-const SummaryCard = ({ cartTotal }) => {
+const SummaryCard = ({ cartTotal, setTotal }) => {
   const history = useHistory();
   return (
     <div className={styles.container}>
@@ -37,7 +38,7 @@ const SummaryCard = ({ cartTotal }) => {
           <button
             type="submit"
             className={styles.checkoutBtn}
-            onClick={() => { checkout(history); }}
+            onClick={() => { checkout(history, setTotal); }}
           >
             Checkout
           </button>

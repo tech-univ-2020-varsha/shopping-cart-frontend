@@ -2,23 +2,22 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../Header/header';
-import useProduct from '../../hooks/useProduct';
-import Tabs from '../Tabs/tabs';
 import useCartCount from '../../hooks/useCartCount';
+import Tabs from '../Tabs/tabs';
+
 import Checkout from '../CheckOut/checkout';
 
 const App = () => {
-  const [products, filterProduct, callComplete] = useProduct();
   const [total, setTotal, callCompleteTotal] = useCartCount();
-  if (!callComplete || !callCompleteTotal) return <div>Loading!...</div>;
+  if (!callCompleteTotal) return <div>Loading!...</div>;
   return (
     <div>
       <Router>
-        <Header total={total} />
+        <Header total={total} setTotal={setTotal} />
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <Tabs products={products} filterProduct={filterProduct} total={total} setTotal={setTotal} />
+              <Tabs total={total} setTotal={setTotal} />
             </Route>
           </Switch>
           <Switch>
@@ -29,7 +28,6 @@ const App = () => {
         </div>
       </Router>
     </div>
-
   );
 };
 

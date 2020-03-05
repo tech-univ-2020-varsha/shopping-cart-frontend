@@ -4,10 +4,12 @@ import useCartDetails from '../../hooks/useCartDetails';
 import * as styles from './checkout.module.css';
 import SummaryCard from '../SummaryCard/summaryCard';
 
-const Checkout = () => {
+const Checkout = (props) => {
+  const location = useLocation();
+
+  const setTotal = location.totalProps;
   const [cartData, callComplete, itemsCount, catergorizedData, cartTotal] = useCartDetails();
   const categories = Object.keys(catergorizedData);
-  console.log(categories);
   if (!callComplete) { return <div>Loading!...</div>; }
   return (
     <div className={styles.checkoutContainer}>
@@ -51,7 +53,7 @@ const Checkout = () => {
           </table>
         </div>
         <div className={styles.summaryCard}>
-          <SummaryCard cartTotal={cartTotal} />
+          <SummaryCard cartTotal={cartTotal} setTotal={setTotal} />
 
         </div>
 

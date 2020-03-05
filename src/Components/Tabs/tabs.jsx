@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import * as styles from './tabs.module.css';
 import Categories from '../CategoriesData.jsx/categories';
+import useProduct from '../../hooks/useProduct';
 
 const clickEvent = (products, setData, setFilterSelected, filter) => {
   setFilterSelected(filter);
   setData(products);
 };
-const Tabs = ({
-  products, filterProduct, total, setTotal,
-}) => {
+const Tabs = ({ total, setTotal }) => {
+  const [products, filterProduct, callComplete] = useProduct();
+
   const filterNames = Object.keys(filterProduct);
   const [data, setData] = useState(null);
   const [filterSelected, setFilterSelected] = useState('All');
   const updateData = data || products;
+  if (!callComplete) return <div>Loading!...</div>;
   return (
 
     <div className={styles.Container}>
