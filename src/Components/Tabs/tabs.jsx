@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import * as styles from './tabs.module.css';
 import Categories from '../CategoriesData.jsx/categories';
@@ -11,11 +11,9 @@ const Tabs = ({
   products, filterProduct, total, setTotal,
 }) => {
   const filterNames = Object.keys(filterProduct);
-  const [data, setData] = useState(products);
-  //   setData(products);
+  const [data, setData] = useState(null);
   const [filterSelected, setFilterSelected] = useState('All');
-
-  //   setData(products);
+  const updateData = data || products;
   return (
 
     <div className={styles.Container}>
@@ -44,7 +42,13 @@ const Tabs = ({
 
       </div>
 
-      <Categories data={data} filter={filterSelected} total={total} setTotal={setTotal} />
+      <Categories
+        data={updateData}
+        filter={filterSelected}
+        total={total}
+        setTotal={setTotal}
+      />
+
     </div>
   );
 };
@@ -52,6 +56,8 @@ const Tabs = ({
 Tabs.propTypes = {
   products: propTypes.arrayOf(propTypes.object).isRequired,
   filterProduct: propTypes.objectOf(propTypes.array).isRequired,
+  total: propTypes.number.isRequired,
+  setTotal: propTypes.func.isRequired,
 };
 
 export default Tabs;

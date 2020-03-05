@@ -5,13 +5,12 @@ import Header from '../Header/header';
 import useProduct from '../../hooks/useProduct';
 import Tabs from '../Tabs/tabs';
 import useCartCount from '../../hooks/useCartCount';
+import Checkout from '../CheckOut/checkout';
 
 const App = () => {
   const [products, filterProduct, callComplete] = useProduct();
   const [total, setTotal, callCompleteTotal] = useCartCount();
-  console.log(callCompleteTotal);
-  if (callComplete) { console.log(filterProduct); }
-  if (callCompleteTotal) { console.log(total); }
+  if (!callComplete || !callCompleteTotal) return <div>Loading!...</div>;
   return (
     <div className="App">
       <Header total={total} />
@@ -19,6 +18,11 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Tabs products={products} filterProduct={filterProduct} total={total} setTotal={setTotal} />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route exact path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </Router>

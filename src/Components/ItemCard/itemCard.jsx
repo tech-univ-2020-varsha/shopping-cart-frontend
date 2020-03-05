@@ -7,7 +7,10 @@ import useCart from '../../hooks/useCart';
 
 
 const ItemCard = ({
-  id, name, price, quantity, imageLink, category, total, setTotal,
+  id, name,
+  price, quantity,
+  imageLink, category,
+  total, setTotal, sold,
 }) => {
   const [count, setCount, callComplete] = useCart(id);
 
@@ -40,19 +43,18 @@ const ItemCard = ({
   const increment = async () => {
     if (count < quantity) {
       await setCount(count + 1);
-      setTotal(total + 1);
+      await setTotal(total + 1);
     }
   };
 
 
   const decrement = async () => {
-    alert(count);
     if (count > 0) {
       await setCount(count - 1);
       await setTotal(total - 1);
     }
   };
-
+  if (!callComplete) { return <div>Loading! ...</div>; }
   return (
     <div className={styles.cardContainer}>
       <div className={styles.itemImage}>
@@ -67,18 +69,26 @@ const ItemCard = ({
         {price}
         /-
       </div>
-      <div className={styles.counter}>
-        <div className={styles.counterItems}>
-          <button className={styles.button} onClick={decrement} type="submit">-</button>
-        </div>
-        <div>
-          {' '}
-          {count}
-        </div>
-        <div className={styles.counterItems}>
-          <button className={styles.button} onClick={increment} type="submit">+</button>
-        </div>
-      </div>
+      {
+          !sold
+            ? (
+              <div className={styles.counter}>
+                <div className={styles.counterItems}>
+                  <button className={styles.button} onClick={decrement} type="submit">-</button>
+                </div>
+                <div>
+                  {' '}
+                  {count}
+                </div>
+                <div className={styles.counterItems}>
+                  <button className={styles.button} onClick={increment} type="submit">+</button>
+                </div>
+              </div>
+            )
+            : <button type="submit" className={styles.soldOut}>SOLD OUT</button>
+
+      }
+
     </div>
   );
 };

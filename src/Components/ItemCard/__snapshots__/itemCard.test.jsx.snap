@@ -3,37 +3,7 @@
 exports[`The Header component should render correctly 1`] = `
 <DocumentFragment>
   <div>
-    <div>
-      <img
-        alt="name"
-        src="imageLink"
-      />
-    </div>
-    <div>
-      name
-    </div>
-    <div>
-      MRP 1/-
-    </div>
-    <div>
-      <div>
-        <button
-          type="submit"
-        >
-          -
-        </button>
-      </div>
-      <div>
-         0
-      </div>
-      <div>
-        <button
-          type="submit"
-        >
-          +
-        </button>
-      </div>
-    </div>
+    Loading! ...
   </div>
 </DocumentFragment>
 `;

@@ -36,3 +36,12 @@
 display: flex;
 margin: 1em;
 }
+
+.soldOut{
+    margin-top: 2em;
+    padding: 1em;
+    font-weight: bold;
+    border-radius: 10px;
+    background: gray;
+    color: white;
+}
