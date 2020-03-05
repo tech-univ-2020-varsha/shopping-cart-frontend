@@ -7,7 +7,7 @@ import useCart from '../../hooks/useCart';
 
 
 const ItemCard = ({
-  id, name, price, quantity, imageLink, category,
+  id, name, price, quantity, imageLink, category, total, setTotal,
 }) => {
   const [count, setCount, callComplete] = useCart(id);
 
@@ -29,6 +29,7 @@ const ItemCard = ({
       url: `${URL}/cart`,
       data: payload,
     });
+
     console.log(response);
   };
 
@@ -39,6 +40,7 @@ const ItemCard = ({
   const increment = async () => {
     if (count < quantity) {
       await setCount(count + 1);
+      setTotal(total + 1);
     }
   };
 
@@ -47,6 +49,7 @@ const ItemCard = ({
     alert(count);
     if (count > 0) {
       await setCount(count - 1);
+      await setTotal(total - 1);
     }
   };
 

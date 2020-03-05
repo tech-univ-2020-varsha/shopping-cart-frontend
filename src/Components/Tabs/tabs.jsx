@@ -7,7 +7,9 @@ const clickEvent = (products, setData, setFilterSelected, filter) => {
   setFilterSelected(filter);
   setData(products);
 };
-const Tabs = ({ products, filterProduct }) => {
+const Tabs = ({
+  products, filterProduct, total, setTotal,
+}) => {
   const filterNames = Object.keys(filterProduct);
   const [data, setData] = useState(products);
   //   setData(products);
@@ -42,7 +44,7 @@ const Tabs = ({ products, filterProduct }) => {
 
       </div>
 
-      <Categories data={data} filter={filterSelected} />
+      <Categories data={data} filter={filterSelected} total={total} setTotal={setTotal} />
     </div>
   );
 };

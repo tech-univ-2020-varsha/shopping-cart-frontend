@@ -3,7 +3,9 @@ import propTypes from 'prop-types';
 import * as styles from './categories.module.css';
 import ItemCard from '../ItemCard/itemCard';
 
-const Categories = ({ data, filter }) => (
+const Categories = ({
+  data, filter, total, setTotal,
+}) => (
   <div className={styles.categoryContainer}>
     <div className={styles.filterName}>
       {filter}
@@ -19,6 +21,8 @@ const Categories = ({ data, filter }) => (
                 quantity={item.quantity}
                 imageLink={item.imageLink}
                 category={filter}
+                total={total}
+                setTotal={setTotal}
               />
             </div>
           ))
