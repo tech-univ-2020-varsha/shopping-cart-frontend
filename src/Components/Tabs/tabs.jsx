@@ -4,7 +4,7 @@ import * as styles from './tabs.module.css';
 import Categories from '../CategoriesData.jsx/categories';
 import useProduct from '../../hooks/useProduct';
 
-const clickEvent = (products, setData, setFilterSelected, filter) => {
+const clickEvent = (products, setData, setFilterSelected, filter, item) => {
   setFilterSelected(filter);
   setData(products);
 };
@@ -16,18 +16,24 @@ const Tabs = ({ total, setTotal }) => {
   const [filterSelected, setFilterSelected] = useState('All');
   const updateData = data || products;
   if (!callComplete) return <div>Loading!...</div>;
+  const className = styles.selectedTabItem;
   return (
 
     <div className={styles.Container}>
       <div className={styles.filterBar}>
         Filter Categories
         <div className={styles.filterTabs}>
+
           <div
             onKeyDown={() => {}}
             role="button"
             tabIndex={0}
             key="All"
-            className={styles.tabItem}
+            className={
+                filterSelected === 'All'
+                  ? styles.selectedTabItem
+                  : styles.tabItem
+}
             onClick={() => clickEvent(products, setData, setFilterSelected, 'All')}
           >
             All
@@ -39,7 +45,9 @@ const Tabs = ({ total, setTotal }) => {
              role="button"
              tabIndex={0}
              key={filter}
-             className={styles.tabItem}
+             className={filterSelected === filter
+               ? styles.selectedTabItem
+               : styles.tabItem}
              onClick={() => clickEvent(filterProduct[filter], setData, setFilterSelected, filter)}
            >
              {filter}
@@ -47,7 +55,6 @@ const Tabs = ({ total, setTotal }) => {
          ))
           }
         </div>
-
       </div>
 
       <Categories
