@@ -12,21 +12,24 @@ const App = () => {
   const [total, setTotal, callCompleteTotal] = useCartCount();
   if (!callComplete || !callCompleteTotal) return <div>Loading!...</div>;
   return (
-    <div className="App">
-      <Header total={total} />
+    <div>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Tabs products={products} filterProduct={filterProduct} total={total} setTotal={setTotal} />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/checkout">
-            <Checkout />
-          </Route>
-        </Switch>
+        <Header total={total} />
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Tabs products={products} filterProduct={filterProduct} total={total} setTotal={setTotal} />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/checkout">
+              <Checkout />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </div>
+
   );
 };
 

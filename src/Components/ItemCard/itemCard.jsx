@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import axios from 'axios';
 import * as styles from './itemCard.module.css';
 import URL from '../../constants/url';
-import useCart from '../../hooks/useCart';
+import useCart from '../../hooks/useItemCount';
 
 
 const ItemCard = ({

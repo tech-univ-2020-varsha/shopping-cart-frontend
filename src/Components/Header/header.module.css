@@ -4,14 +4,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
 }
 .cartIcon{
  right: 0;
  align-self: flex-end;
  margin:  2em;
- position: relative;
+ position: absolute;
 
+}
+
+.link{
+    color: #000
 }
 
 .totalCount{
