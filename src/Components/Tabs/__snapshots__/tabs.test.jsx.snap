@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The Header component should render correctly 1`] = `
+exports[`The Tabs component should render correctly 1`] = `
 <DocumentFragment>
   <div>
     <div>

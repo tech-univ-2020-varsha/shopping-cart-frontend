@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Checkout from './checkout';
+import SummaryCard from './summaryCard';
 
-describe('The Checkout component', () => {
+describe('The Summary Card component', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Checkout />);
+    const { asFragment } = render(<SummaryCard />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

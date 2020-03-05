@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { renderHook } from '@testing-library/react-hooks';
-import useCart from './useCart';
+import useItemCount from './useItemCount';
 import URL from '../constants/url';
 
 describe('the useProduct hook', () => {
@@ -9,7 +9,7 @@ describe('the useProduct hook', () => {
     const mockAxios = jest.spyOn(axios, 'get');
     mockAxios.mockResolvedValue({ data: [] });
 
-    const { result, waitForNextUpdate } = renderHook(() => useCart('1'));
+    const { result, waitForNextUpdate } = renderHook(() => useItemCount('1'));
     await waitForNextUpdate();
     expect(mockAxios).toHaveBeenCalledWith(`${URL}/cart`);
     expect(result.current).toBeInstanceOf(Array);

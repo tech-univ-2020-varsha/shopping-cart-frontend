@@ -3,7 +3,7 @@ import axios from 'axios';
 import URL from '../constants/url';
 
 
-const useCart = (id) => {
+const useItemCount = (id) => {
   const [count, setCount] = useState(0);
   const [callComplete, setCallComplete] = useState(null);
 
@@ -31,4 +31,4 @@ const useCart = (id) => {
   return [count, setCount, callComplete];
 };
 
-export default useCart;
+export default useItemCount;

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import ItemCard from './itemCard';
 
-describe('The Header component', () => {
+describe('The Item Card component', () => {
   it('should render correctly', () => {
     const { asFragment } = render(<ItemCard
       id={1}

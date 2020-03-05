@@ -14,7 +14,8 @@ const useCartDetails = () => {
   const [cartData, setCartData] = useState([]);
   const [catergorizedData, setCategorizedData] = useState([]);
   const [callComplete, setCallComplete] = useState(null);
-  const [total, setTotal] = useState(0);
+  const [itemsCount, setItemsCount] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
   useEffect(() => {
     const asyncFunc = async () => {
       try {
@@ -22,12 +23,15 @@ const useCartDetails = () => {
         if (response.status === 200) {
           const cartDetails = response.data;
           let countTotal = 0;
+          let cartTotalItr = 0;
           cartDetails.map((cart) => {
             countTotal += cart.quantity;
+            cartTotalItr += cart.total;
           });
           setCategorizedData(filterProducts(cartDetails, 'category'));
-          setTotal(countTotal);
+          setItemsCount(countTotal);
           setCartData(cartDetails);
+          setCartTotal(cartTotalItr);
         }
         setCallComplete(true);
       } catch (err) {
@@ -36,7 +40,7 @@ const useCartDetails = () => {
     };
     asyncFunc();
   }, []);
-  return [cartData, callComplete, total, catergorizedData];
+  return [cartData, callComplete, itemsCount, catergorizedData, cartTotal];
 };
 
 export default useCartDetails;

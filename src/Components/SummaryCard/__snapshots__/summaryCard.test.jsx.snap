@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Summary Card component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      <div>
+        <div>
+          Total
+        </div>
+        <div>
+          <span>
+            RS
+          </span>
+           
+        </div>
+      </div>
+      <hr />
+      <div>
+        <button
+          type="submit"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+    <div>
+      <button
+        type="submit"
+      >
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

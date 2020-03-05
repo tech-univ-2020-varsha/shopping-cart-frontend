@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import axios from 'axios';
 import * as styles from './itemCard.module.css';
 import URL from '../../constants/url';
-import useCart from '../../hooks/useItemCount';
+import useItemCount from '../../hooks/useItemCount';
 
 
 const ItemCard = ({
@@ -12,7 +12,7 @@ const ItemCard = ({
   imageLink, category,
   total, setTotal, sold,
 }) => {
-  const [count, setCount, callComplete] = useCart(id);
+  const [count, setCount, callComplete] = useItemCount(id);
 
   const updateCart = async () => {
     const payload = {

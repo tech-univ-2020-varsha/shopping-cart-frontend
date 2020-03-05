@@ -2,9 +2,10 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import useCartDetails from '../../hooks/useCartDetails';
 import * as styles from './checkout.module.css';
+import SummaryCard from '../SummaryCard/summaryCard';
 
 const Checkout = () => {
-  const [cartData, callComplete, total, catergorizedData] = useCartDetails();
+  const [cartData, callComplete, itemsCount, catergorizedData, cartTotal] = useCartDetails();
   const categories = Object.keys(catergorizedData);
   console.log(categories);
   if (!callComplete) { return <div>Loading!...</div>; }
@@ -12,7 +13,7 @@ const Checkout = () => {
     <div className={styles.checkoutContainer}>
       <div className={styles.heading}>
         Your Shopping Cart (
-        {total}
+        {itemsCount}
         {' '}
         items)
       </div>
@@ -50,7 +51,7 @@ const Checkout = () => {
           </table>
         </div>
         <div className={styles.summaryCard}>
-          Summary
+          <SummaryCard cartTotal={cartTotal} />
 
         </div>
       </div>

@@ -1,0 +1,70 @@
+.container{
+    display: flex;
+    margin-left: 3em;
+    margin-top: 2.5em;
+    margin-right: 5em;
+    width: 100%;
+    flex-direction: column;
+}
+
+.summaryDetails{
+    display: flex;
+    flex-direction: column;
+    background: rgb(196,196,196);
+    padding: 2em;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 2em;
+    box-shadow: 1px 3px 5px #888888;
+}
+
+.priceDetails{
+    display: flex;
+   justify-content: space-between;
+  font-size: 2em;
+}
+
+.priceCartTotal{
+display: flex;
+align-self: end;
+right:0;
+position: relative;
+
+}
+
+.totalWord{
+    display: flex;
+    align-self: start;
+}
+
+.RS{
+    font-size: 0.4em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-100%,0%);;
+}
+
+.line{
+    margin-top: 2em;
+     border: 0.5px solid black;
+    width: 100%;
+    background: black;
+}
+
+.checkout{
+    width: 100%;
+    margin-top: 2em;
+}
+
+.checkoutBtn{
+    width: 100%;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    border-radius: 10px;
+    background: rgb(238,195,92);
+    box-shadow: 1px 3px 5px #888888;
+    font-size: 1em;
+}
