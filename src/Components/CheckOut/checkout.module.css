@@ -69,11 +69,21 @@ thead:last-child tr:last-child th:first-child, tbody:last-child tr:last-child td
 
 .summaryCard{
     display: flex;
-width: 30%;
-margin-right: 2em;
+    flex-direction: column;
+    width: 30%;
+    margin-right: 8em;
 }
 
 .cartSummary{
     display: flex;
+    margin-right: 4em;
 }
-  
+
+@media(max-width: 600px) {
+    .cartSummary {
+      flex-direction: column;
+     }
+     .summaryCard{
+         width: 80%;
+     }
+  }

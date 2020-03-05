@@ -22,6 +22,7 @@
     display: flex;
    justify-content: space-between;
   font-size: 2em;
+  margin-top: 2em;
 }
 
 .priceCartTotal{
@@ -67,4 +68,31 @@ position: relative;
     background: rgb(238,195,92);
     box-shadow: 1px 3px 5px #888888;
     font-size: 1em;
+    outline: none;
+    margin-top: 2em;
 }
+
+.shoppingBtn{
+    width: 100%;
+    border-radius: 10px;
+    background: rgb(238,195,92);
+    box-shadow: 1px 3px 5px #888888;
+    font-size: 1em;
+    outline: none;
+    margin-top: 2em;
+}
+
+
+
+
+.continueBtn{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px #888888;
+    font-size: 1em;
+    outline: none;
+    margin-top: 2em;
+    padding: 1em;
+}
+
+
