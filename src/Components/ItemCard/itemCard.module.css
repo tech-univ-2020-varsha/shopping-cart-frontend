@@ -1,0 +1,21 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 3px 5px #888888;
+    text-align: center;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.itemImage{
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}

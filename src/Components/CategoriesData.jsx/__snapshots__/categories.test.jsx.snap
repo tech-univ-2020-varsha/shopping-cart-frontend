@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Categories component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      All
+    </div>
+    <div />
+  </div>
+</DocumentFragment>
+`;

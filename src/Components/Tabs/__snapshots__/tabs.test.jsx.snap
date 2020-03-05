@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Header component should render correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      Filter Categories
+      <div>
+        <div>
+          All
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        All
+      </div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;

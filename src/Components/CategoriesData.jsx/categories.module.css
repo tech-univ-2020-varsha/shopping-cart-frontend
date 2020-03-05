@@ -1,0 +1,41 @@
+.filterName{
+    font-size: 3em;
+}
+.categoryContainer{
+    display: flex;
+    margin-left: 3em;
+
+    padding: 1em;
+    flex-direction: column;
+}
+
+.filterItems{
+    display: flex;
+ 
+    margin: 3em;
+    flex-wrap: wrap;
+}
+
+.itemCard{
+    width:25%;
+}
+
+
+@media(max-width: 1200px) {
+    .itemCard {
+       width: 30%;
+     }
+  }
+
+@media(max-width: 1000px) {
+    .itemCard {
+       width: 50%;
+     }
+  }
+
+  
+  @media(max-width: 600px) {
+    .itemCard {
+       width: 100%;
+     }
+  }

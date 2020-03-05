@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React from 'react';
-import { renderHook, act } from '@testing-library/react-hooks';
+
+import { renderHook } from '@testing-library/react-hooks';
 import useProduct from './useProduct';
 import URL from '../constants/url';
 
