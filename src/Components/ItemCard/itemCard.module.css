@@ -19,3 +19,20 @@
     height: 100%;
     border-radius: 20px;
 }
+.counter{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+   outline: none;
+   width: 2em;
+   background: rgb(196,196,196);
+}
+
+.counterItems{
+display: flex;
+margin: 1em;
+}
