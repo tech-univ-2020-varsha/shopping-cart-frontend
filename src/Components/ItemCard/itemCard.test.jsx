@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import ItemCard from './itemCard';
 
 describe('The Item Card component', () => {
@@ -10,6 +10,7 @@ describe('The Item Card component', () => {
       price={1}
       quantity={1}
       imageLink="imageLink"
+      category="All"
     />);
     expect(asFragment()).toMatchSnapshot();
   });

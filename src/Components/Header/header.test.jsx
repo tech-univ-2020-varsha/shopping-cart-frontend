@@ -17,7 +17,14 @@ describe('The Header component', () => {
   });
   it('should render correctly', () => {
     const history = createMemoryHistory();
-    const { asFragment } = render(<Router history={history}><Header /></Router>);
+    const { asFragment } = render(
+      <Router history={history}>
+        <Header
+          total={1}
+          setTotal={() => {}}
+        />
+      </Router>,
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });

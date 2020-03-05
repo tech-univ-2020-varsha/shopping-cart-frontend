@@ -59,5 +59,6 @@ const SummaryCard = ({ cartTotal, setTotal }) => {
 
 SummaryCard.propTypes = {
   cartTotal: propTypes.number.isRequired,
+  setTotal: propTypes.func.isRequired,
 };
 export default SummaryCard;

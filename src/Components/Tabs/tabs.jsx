@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import * as styles from './tabs.module.css';
 import Categories from '../CategoriesData.jsx/categories';
@@ -23,6 +23,9 @@ const Tabs = ({ total, setTotal }) => {
         Filter Categories
         <div className={styles.filterTabs}>
           <div
+            onKeyDown={() => {}}
+            role="button"
+            tabIndex={0}
             key="All"
             className={styles.tabItem}
             onClick={() => clickEvent(products, setData, setFilterSelected, 'All')}
@@ -32,6 +35,9 @@ const Tabs = ({ total, setTotal }) => {
           {
          filterNames.map((filter) => (
            <div
+             onKeyDown={() => {}}
+             role="button"
+             tabIndex={0}
              key={filter}
              className={styles.tabItem}
              onClick={() => clickEvent(filterProduct[filter], setData, setFilterSelected, filter)}

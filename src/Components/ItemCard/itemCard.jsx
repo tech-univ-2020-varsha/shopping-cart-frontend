@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
 import axios from 'axios';
 import * as styles from './itemCard.module.css';
@@ -101,5 +101,8 @@ ItemCard.propTypes = {
   quantity: propTypes.number.isRequired,
   imageLink: propTypes.string.isRequired,
   category: propTypes.string.isRequired,
+  total: propTypes.number.isRequired,
+  setTotal: propTypes.func.isRequired,
+  sold: propTypes.bool.isRequired,
 };
 export default ItemCard;
