@@ -6,15 +6,13 @@ import Categories from '../CategoriesData.jsx/categories';
 const clickEvent = (products, setData, setFilterSelected, filter) => {
   setFilterSelected(filter);
   setData(products);
-  console.log(products);
 };
 const Tabs = ({ products, filterProduct }) => {
   const filterNames = Object.keys(filterProduct);
   const [data, setData] = useState(products);
   //   setData(products);
   const [filterSelected, setFilterSelected] = useState('All');
-  console.log('products', products);
-  console.log(filterSelected);
+
   //   setData(products);
   return (
 

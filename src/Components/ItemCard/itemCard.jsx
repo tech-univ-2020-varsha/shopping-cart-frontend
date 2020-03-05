@@ -1,17 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
+import axios from 'axios';
 import * as styles from './itemCard.module.css';
+import URL from '../../constants/url';
+import useCart from '../../hooks/useCart';
+
 
 const ItemCard = ({
-  id, name, price, quantity, imageLink,
+  id, name, price, quantity, imageLink, category,
 }) => {
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    if (count < quantity) { setCount(count + 1); }
+  const [count, setCount, callComplete] = useCart(id);
+
+  const updateCart = async () => {
+    const payload = {
+      products: [
+        {
+          id,
+          name,
+          price,
+          quantity: count,
+          imageLink,
+          category,
+        },
+      ],
+    };
+    const response = await axios({
+      method: 'PUT',
+      url: `${URL}/cart`,
+      data: payload,
+    });
+    console.log(response);
   };
-  const decrement = () => {
-    if (count > 0) { setCount(count - 1); }
+
+  useEffect(() => {
+    updateCart();
+  }, [count]);
+
+  const increment = async () => {
+    if (count < quantity) {
+      await setCount(count + 1);
+    }
   };
+
+
+  const decrement = async () => {
+    alert(count);
+    if (count > 0) {
+      await setCount(count - 1);
+    }
+  };
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.itemImage}>
@@ -49,5 +87,6 @@ ItemCard.propTypes = {
   price: propTypes.number.isRequired,
   quantity: propTypes.number.isRequired,
   imageLink: propTypes.string.isRequired,
+  category: propTypes.string.isRequired,
 };
 export default ItemCard;

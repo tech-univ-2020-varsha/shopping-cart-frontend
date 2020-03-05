@@ -18,6 +18,7 @@ const Categories = ({ data, filter }) => (
                 price={item.price}
                 quantity={item.quantity}
                 imageLink={item.imageLink}
+                category={filter}
               />
             </div>
           ))
