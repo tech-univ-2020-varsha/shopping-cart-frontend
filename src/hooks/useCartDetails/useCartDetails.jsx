@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import URL from '../constants/url';
+import URL from '../../constants/url';
 
 const filterProducts = (array, key) => array.reduce((result, currentValue) => {
   // eslint-disable-next-line no-param-reassign

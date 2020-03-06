@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import * as styles from './tabs.module.css';
 import Categories from '../CategoriesData.jsx/categories';
-import useProduct from '../../hooks/useProduct';
+import useProduct from '../../hooks/useProduct/useProduct';
 
 const clickEvent = (products, setData, setFilterSelected, filter, item) => {
   setFilterSelected(filter);

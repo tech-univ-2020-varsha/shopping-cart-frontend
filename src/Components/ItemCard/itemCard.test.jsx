@@ -11,6 +11,9 @@ describe('The Item Card component', () => {
       quantity={1}
       imageLink="imageLink"
       category="All"
+      total={1}
+      setTotal={() => {}}
+      sold={false}
     />);
     expect(asFragment()).toMatchSnapshot();
   });

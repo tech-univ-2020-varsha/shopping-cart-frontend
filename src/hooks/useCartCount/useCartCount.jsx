@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import URL from '../constants/url';
+import URL from '../../constants/url';
 
 const useCartCount = () => {
   const [total, setTotal] = useState(0);

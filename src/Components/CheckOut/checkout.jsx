@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import useCartDetails from '../../hooks/useCartDetails';
+import useCartDetails from '../../hooks/useCartDetails/useCartDetails';
 import * as styles from './checkout.module.css';
 import SummaryCard from '../SummaryCard/summaryCard';
 

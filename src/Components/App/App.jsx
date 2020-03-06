@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from '../Header/header';
-import useCartCount from '../../hooks/useCartCount';
+import useCartCount from '../../hooks/useCartCount/useCartCount';
 import Tabs from '../Tabs/tabs';
 
 import Checkout from '../CheckOut/checkout';
