@@ -36,6 +36,7 @@ const SummaryCard = ({ cartTotal, setTotal }) => {
         <hr className={styles.line} />
         <div className={styles.checkout}>
           <button
+            data-testid="checkoutbtn"
             type="submit"
             className={styles.checkoutBtn}
             onClick={() => { checkout(history, setTotal); }}

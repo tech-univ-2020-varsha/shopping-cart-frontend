@@ -4,6 +4,7 @@ import axios from 'axios';
 import * as styles from './itemCard.module.css';
 import URL from '../../constants/url';
 import useItemCount from '../../hooks/useItemCount/useItemCount';
+import soldImage from '../../sold.png';
 
 
 const ItemCard = ({
@@ -54,42 +55,69 @@ const ItemCard = ({
       await setTotal(total - 1);
     }
   };
+
+
   if (!callComplete) { return <div>Loading! ...</div>; }
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.itemImage}>
-        <img src={imageLink} alt={name} className={styles.image} />
+    !sold ? (
+      <div className={styles.cardContainer}>
+        <div className={styles.itemImage}>
+          <img src={imageLink} alt={name} className={styles.image} />
+        </div>
+        <div>
+          {name}
+        </div>
+        <div>
+          MRP
+          {' '}
+          {price}
+          /-
+        </div>
+        <div className={styles.counter}>
+          <div className={styles.counterItems}>
+            <button className={styles.button} onClick={decrement} type="submit">-</button>
+          </div>
+          <div>
+            {' '}
+            {count}
+          </div>
+          <div className={styles.counterItems}>
+            <button className={styles.button} onClick={increment} type="submit">+</button>
+          </div>
+        </div>
       </div>
-      <div>
-        {name}
-      </div>
-      <div>
-        MRP
-        {' '}
-        {price}
-        /-
-      </div>
-      {
-          !sold
-            ? (
-              <div className={styles.counter}>
-                <div className={styles.counterItems}>
-                  <button className={styles.button} onClick={decrement} type="submit">-</button>
-                </div>
-                <div>
-                  {' '}
-                  {count}
-                </div>
-                <div className={styles.counterItems}>
-                  <button className={styles.button} onClick={increment} type="submit">+</button>
-                </div>
-              </div>
-            )
-            : <button type="submit" className={styles.soldOut}>SOLD OUT</button>
+    )
+      : (
+        <div className={[styles.cardContainer, styles.soldBackGround].join(' ')}>
+          <div className={[styles.itemImage, styles.soldImageItemBorder].join(' ')}>
+            <img
+              src={soldImage}
+              alt="sold"
+              className={styles.soldImage}
+            />
+            <img src={imageLink} alt={name} className={styles.image} />
+          </div>
+          <div>
+            {name}
+          </div>
+          <div>
+            MRP
+            {' '}
+            {price}
+            /-
+          </div>
 
-      }
+          <div>
+            <div
+              className={styles.soldOut}
+            >
+              SOLD OUT
+            </div>
+          </div>
+        </div>
 
-    </div>
+      )
+
   );
 };
 

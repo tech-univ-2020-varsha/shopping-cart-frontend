@@ -2,7 +2,16 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 
-const Button = ({ buttonText, clickEvent, testid }) => <button type="submit" className="buttonStyle" onClick={clickEvent} data-testid={testid}>{buttonText}</button>;
+const Button = ({ buttonText, clickEvent, testid }) => (
+  <button
+    type="submit"
+    className="buttonStyle"
+    onClick={clickEvent}
+    data-testid={testid}
+  >
+    {buttonText}
+  </button>
+);
 
 
 Button.defaultProps = {

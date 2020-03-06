@@ -34,7 +34,12 @@ const Checkout = (props) => {
                 categories.map((category) => (
                   <tbody>
                     <tr key={category}>
-                      <td colSpan="4" className={styles.categoryHeading}>{category}</td>
+                      <td
+                        colSpan="4"
+                        className={styles.categoryHeading}
+                      >
+                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                      </td>
                     </tr>
                     {
                         catergorizedData[category].map((item) => (

@@ -18,6 +18,7 @@ exports[`The Summary Card component should render correctly 1`] = `
       <hr />
       <div>
         <button
+          data-testid="checkoutbtn"
           type="submit"
         >
           Checkout

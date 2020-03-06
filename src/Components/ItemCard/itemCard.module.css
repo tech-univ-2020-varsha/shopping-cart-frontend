@@ -12,6 +12,9 @@
 .itemImage{
     border: 2px solid black;
     border-radius: 20px;
+    /* position:absolute;
+    z-index: 1; */
+    position: relative;
 }
 
 .image{
@@ -41,11 +44,26 @@ margin: 1em;
 }
 
 .soldOut{
-    margin-top: 2em;
+    margin-top: 1em;
     padding: 1em;
     font-weight: bold;
     border-radius: 10px;
     background: gray;
     color: white;
     outline: none;
+}
+
+.soldImage{
+    width: 50%;
+    height: 50%;
+    position:absolute;
+    z-index: 2;
+}
+
+.soldBackGround{
+    background:rgb(196,196,196);
+}
+
+.soldImageItemBorder{
+    border:none
 }

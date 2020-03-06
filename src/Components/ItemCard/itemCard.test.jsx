@@ -21,4 +21,20 @@ describe('The Item Card component', () => {
     />);
     expect(asFragment()).toMatchSnapshot();
   });
+
+  it('should make an api call to fetch the items data', () => {
+    const { asFragment } = render(<ItemCard
+      id={1}
+      name="name"
+      price={1}
+      quantity={1}
+      imageLink="imageLink"
+      category="All"
+      total={1}
+      setTotal={() => {}}
+      sold={false}
+    />);
+
+    expect(mockAxios).toHaveBeenCalled();
+  });
 });
