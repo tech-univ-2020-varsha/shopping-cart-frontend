@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import * as styles from './summaryCard.module.css';
 import URL from '../../constants/url';
+import Button from '../Button/button';
 
 const checkout = async (history, setTotal) => {
   const response = await axios.get(`${URL}/checkout`);
@@ -35,24 +36,21 @@ const SummaryCard = ({ cartTotal, setTotal }) => {
         </div>
         <hr className={styles.line} />
         <div className={styles.checkout}>
-          <button
-            data-testid="checkoutbtn"
-            type="submit"
-            className={styles.checkoutBtn}
-            onClick={() => { checkout(history, setTotal); }}
-          >
-            Checkout
-          </button>
+          <Button
+            buttonText="Checkout"
+            testid="checkoutbtn"
+            buttonStyle={styles.checkoutBtn}
+            clickEvent={() => { checkout(history, setTotal); }}
+          />
+
         </div>
       </div>
       <div className={styles.continue}>
-        <button
-          type="submit"
-          className={styles.continueBtn}
-          onClick={() => { continueShopping(history); }}
-        >
-          Continue Shopping
-        </button>
+        <Button
+          buttonText="Continue Shopping"
+          buttonStyle={styles.continueBtn}
+          clickEvent={() => { continueShopping(history); }}
+        />
       </div>
     </div>
   );

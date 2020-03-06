@@ -3,7 +3,6 @@
 exports[`the button component should render correctly 1`] = `
 <DocumentFragment>
   <button
-    class="buttonStyle"
     data-testid="btn-test-id"
     type="submit"
   >

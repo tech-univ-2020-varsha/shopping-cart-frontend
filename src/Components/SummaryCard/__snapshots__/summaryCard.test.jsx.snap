@@ -27,6 +27,7 @@ exports[`The Summary Card component should render correctly 1`] = `
     </div>
     <div>
       <button
+        data-testid="test-id"
         type="submit"
       >
         Continue Shopping

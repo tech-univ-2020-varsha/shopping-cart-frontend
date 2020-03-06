@@ -2,10 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 
 
-const Button = ({ buttonText, clickEvent, testid }) => (
+const Button = ({
+  buttonText, clickEvent, testid, buttonStyle,
+}) => (
   <button
     type="submit"
-    className="buttonStyle"
+    className={buttonStyle}
     onClick={clickEvent}
     data-testid={testid}
   >

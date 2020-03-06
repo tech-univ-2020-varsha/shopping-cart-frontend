@@ -5,6 +5,7 @@ import * as styles from './itemCard.module.css';
 import URL from '../../constants/url';
 import useItemCount from '../../hooks/useItemCount/useItemCount';
 import soldImage from '../../sold.png';
+import Button from '../Button/button';
 
 
 const ItemCard = ({
@@ -75,14 +76,14 @@ const ItemCard = ({
         </div>
         <div className={styles.counter}>
           <div className={styles.counterItems}>
-            <button className={styles.button} onClick={decrement} type="submit">-</button>
+            <Button buttonText="-" clickEvent={decrement} buttonStyle={styles.button} />
           </div>
           <div>
             {' '}
             {count}
           </div>
           <div className={styles.counterItems}>
-            <button className={styles.button} onClick={increment} type="submit">+</button>
+            <Button buttonText="+" clickEvent={increment} buttonStyle={styles.button} />
           </div>
         </div>
       </div>
