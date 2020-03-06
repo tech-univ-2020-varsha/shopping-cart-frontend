@@ -17,6 +17,7 @@ const Tabs = ({ total, setTotal }) => {
   const updateData = data || products;
   if (!callComplete) return <div>Loading!...</div>;
   const className = styles.selectedTabItem;
+
   return (
 
     <div className={styles.Container}>
@@ -30,30 +31,33 @@ const Tabs = ({ total, setTotal }) => {
             tabIndex={0}
             key="All"
             className={
-                filterSelected === 'All'
+                [filterSelected === 'All'
                   ? styles.selectedTabItem
-                  : styles.tabItem
+                  : styles.tabItem, styles.leftBorderRadius].join(' ')
 }
             onClick={() => clickEvent(products, setData, setFilterSelected, 'All')}
           >
             All
           </div>
           {
-         filterNames.map((filter) => (
-           <div
-             onKeyDown={() => {}}
-             role="button"
-             tabIndex={0}
-             key={filter}
-             className={filterSelected === filter
-               ? styles.selectedTabItem
-               : styles.tabItem}
-             onClick={() => clickEvent(filterProduct[filter], setData, setFilterSelected, filter)}
-           >
-             {filter.charAt(0).toUpperCase() + filter.slice(1)}
-           </div>
-         ))
-          }
+         filterNames.map((filter, index) => {
+           const paddingClassName = filterNames.length === index + 1 ? styles.rightBorderRadius : '';
+           return (
+             <div
+               onKeyDown={() => {}}
+               role="button"
+               tabIndex={0}
+               key={filter}
+               className={[filterSelected === filter
+                 ? styles.selectedTabItem
+                 : styles.tabItem, paddingClassName].join(' ')}
+               onClick={() => clickEvent(filterProduct[filter], setData, setFilterSelected, filter)}
+             >
+               {filter.charAt(0).toUpperCase() + filter.slice(1)}
+             </div>
+           );
+         })
+             }
         </div>
       </div>
 

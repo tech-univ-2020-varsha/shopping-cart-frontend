@@ -42,3 +42,10 @@
        width: 100%;
      }
   }
+
+
+  @media(max-width: 400px) {
+    .itemCard {
+       width: 100%;
+     }
+  }

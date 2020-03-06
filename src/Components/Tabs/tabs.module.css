@@ -19,6 +19,14 @@
     padding-left: 2em;
    
 }
+
+.leftBorderRadius{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.rightBorderRadius{
+    border-radius: 0px 10px 10px 0px;  
+}
 .tabItem{
     display: flex;
     padding: 1em;

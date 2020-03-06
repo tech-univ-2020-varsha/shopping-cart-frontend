@@ -31,3 +31,16 @@
     background: rgb(187,58,42);
     color: aliceblue;
 }
+
+@media(max-width: 400px) {
+    .header {
+       width: 100%;
+     }
+     .cartIcon{
+        right: 0;
+        /* align-self: flex-end;
+        margin:  0em;
+        position: relative; */
+       
+       }
+  }
