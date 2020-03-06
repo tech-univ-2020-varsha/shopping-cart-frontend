@@ -18,7 +18,9 @@
 }
 
 .itemCard{
-    width:25%;
+    /* width:25%; */
+    flex:0 25%;
+   
 }
 
 

@@ -44,7 +44,7 @@ const SummaryCard = ({ cartTotal, setTotal }) => {
           </button>
         </div>
       </div>
-      <div className={styles.checkout}>
+      <div className={styles.continue}>
         <button
           type="submit"
           className={styles.continueBtn}

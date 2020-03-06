@@ -1,8 +1,6 @@
 .container{
     display: flex;
     margin-left: 3em;
-    margin-top: 2.5em;
-    margin-right: 5em;
     width: 100%;
     flex-direction: column;
 }
@@ -15,16 +13,20 @@
     border-radius: 10px;
     width: 100%;
     margin-top: 2em;
-    box-shadow: 1px 3px 5px #888888;
+    box-shadow: 0px 0px 6px #888888;
 }
 
 .priceDetails{
     display: flex;
    justify-content: space-between;
   font-size: 2em;
-  margin-top: 2em;
 }
 
+
+.continue{
+    width: 100%;
+    margin-top: 2em; 
+}
 .priceCartTotal{
 display: flex;
 align-self: end;
@@ -66,7 +68,7 @@ position: relative;
     padding-bottom: 1em;
     border-radius: 10px;
     background: rgb(238,195,92);
-    box-shadow: 1px 3px 5px #888888;
+    box-shadow: 0px 0px 6px #888888;
     font-size: 1em;
     outline: none;
     margin-top: 2em;
@@ -76,10 +78,10 @@ position: relative;
     width: 100%;
     border-radius: 10px;
     background: rgb(238,195,92);
-    box-shadow: 1px 3px 5px #888888;
+    box-shadow: 0px 0px 6px #888888;
     font-size: 1em;
     outline: none;
-    margin-top: 2em;
+   
 }
 
 
@@ -92,7 +94,7 @@ position: relative;
     font-size: 1em;
     outline: none;
     margin-top: 2em;
-    padding: 1em;
+    padding: 1em 3em;
 }
 
 

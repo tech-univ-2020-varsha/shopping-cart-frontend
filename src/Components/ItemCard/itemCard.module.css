@@ -1,7 +1,7 @@
 .cardContainer{
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 3px 5px #888888;
+    box-shadow: 0px 0px 10px #888888;
     text-align: center;
     margin: 2em;
     padding: 2em;
@@ -28,8 +28,11 @@
 
 .button{
    outline: none;
-   width: 2em;
+   /* width: 2em; */
    background: rgb(196,196,196);
+   flex-wrap: wrap;
+   padding: 1em 2em;
+  font-weight: bold;
 }
 
 .counterItems{

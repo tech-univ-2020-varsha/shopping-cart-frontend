@@ -50,7 +50,7 @@ const Tabs = ({ total, setTotal }) => {
                : styles.tabItem}
              onClick={() => clickEvent(filterProduct[filter], setData, setFilterSelected, filter)}
            >
-             {filter}
+             {filter.charAt(0).toUpperCase() + filter.slice(1)}
            </div>
          ))
           }

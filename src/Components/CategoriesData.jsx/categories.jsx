@@ -11,7 +11,7 @@ const Categories = ({
   return (
     <div className={styles.categoryContainer}>
       <div className={styles.filterName}>
-        {filter}
+        { filter.charAt(0).toUpperCase() + filter.slice(1)}
       </div>
       <div className={styles.filterItems}>
         {
